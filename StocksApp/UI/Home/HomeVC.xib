@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="dark"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="UIMenu" message="Requires Xcode 11 or later." minToolsVersion="11.0" requiredIntegratedClassName="UICommandDiff"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeVC" customModule="StocksApp" customModuleProvider="target">
+            <connections>
+                <outlet property="infoButton" destination="RJ9-Ku-Np7" id="cNC-3L-J3g"/>
+                <outlet property="popButton" destination="Io4-g9-Kqn" id="XGS-sm-s3j"/>
+                <outlet property="searchBar" destination="OI4-Sn-zbF" id="k7W-Ab-oRO"/>
+                <outlet property="tableView" destination="T2e-SE-bZQ" id="0LC-b8-YzR"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stocks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fc5-z8-s7g">
+                    <rect key="frame" x="25" y="0.0" width="86" height="31"/>
+                    <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="26"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30 January" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tts-0N-CK0">
+                    <rect key="frame" x="25" y="35" width="140" height="31"/>
+                    <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="26"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="T2e-SE-bZQ">
+                    <rect key="frame" x="5" y="207" width="404" height="655"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <color key="separatorColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
+                <searchBar contentMode="redraw" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="OI4-Sn-zbF">
+                    <rect key="frame" x="20" y="98" width="374" height="40"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="LWF-ZV-ood"/>
+                    </connections>
+                </searchBar>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoDark" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RJ9-Ku-Np7">
+                    <rect key="frame" x="361" y="40" width="26" height="26"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <menu key="menu" id="kj3-rv-61H">
+                        <children>
+                            <command title="Item 1" id="Fab-HL-CyM"/>
+                            <command title="Item 2" id="jbg-Rz-yfb"/>
+                        </children>
+                    </menu>
+                    <connections>
+                        <action selector="infoButtonClicked:" destination="-1" eventType="touchUpInside" id="CqV-s5-Rcm"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Io4-g9-Kqn">
+                    <rect key="frame" x="25" y="158" width="110" height="34"/>
+                    <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="19"/>
+                    <menu key="menu" id="qNN-yn-ABn">
+                        <children>
+                            <command title="My Symbols" id="whF-14-xGo"/>
+                            <command title="All Symbols" id="TLX-Yf-Hlb"/>
+                        </children>
+                    </menu>
+                    <state key="normal" title="My Symbols"/>
+                    <connections>
+                        <action selector="mySymbolsClicked:" destination="-1" eventType="touchUpInside" id="GDD-na-3Y4"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="Io4-g9-Kqn" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="1iF-fy-n2C"/>
+                <constraint firstItem="T2e-SE-bZQ" firstAttribute="top" secondItem="Io4-g9-Kqn" secondAttribute="bottom" constant="15" id="4bF-b7-7Vt"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="T2e-SE-bZQ" secondAttribute="trailing" constant="5" id="9Vw-70-tOs"/>
+                <constraint firstItem="Tts-0N-CK0" firstAttribute="top" secondItem="Fc5-z8-s7g" secondAttribute="bottom" constant="4" id="P1T-I4-efS"/>
+                <constraint firstItem="OI4-Sn-zbF" firstAttribute="top" secondItem="Tts-0N-CK0" secondAttribute="bottom" constant="32" id="Z3A-UF-dyd"/>
+                <constraint firstItem="T2e-SE-bZQ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="5" id="ZLu-w1-5e0"/>
+                <constraint firstItem="Fc5-z8-s7g" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="-48" id="ebV-Np-9KI"/>
+                <constraint firstItem="Io4-g9-Kqn" firstAttribute="top" secondItem="OI4-Sn-zbF" secondAttribute="bottom" constant="20" id="fp8-jU-IS1"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="T2e-SE-bZQ" secondAttribute="bottom" id="lSH-Wl-XwS"/>
+                <constraint firstItem="OI4-Sn-zbF" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="moO-s8-qOR"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="OI4-Sn-zbF" secondAttribute="trailing" constant="20" id="noh-PE-Epf"/>
+                <constraint firstItem="Io4-g9-Kqn" firstAttribute="top" secondItem="Tts-0N-CK0" secondAttribute="bottom" constant="92" id="qN9-wu-cDX"/>
+                <constraint firstItem="Fc5-z8-s7g" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="tlI-Gb-QjL"/>
+                <constraint firstItem="Tts-0N-CK0" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="v7E-fr-HLM"/>
+            </constraints>
+            <point key="canvasLocation" x="115.94202898550725" y="19.419642857142858"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
