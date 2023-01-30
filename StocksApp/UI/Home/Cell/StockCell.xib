@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="dark"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="StockCell" customModule="StocksApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="75"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tWv-RQ-pAZ">
+                    <rect key="frame" x="10" y="15" width="51" height="22"/>
+                    <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="19"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Long Stock Explanation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ANi-SF-p4J">
+                    <rect key="frame" x="10" y="47" width="170.66666666666666" height="17"/>
+                    <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="15"/>
+                    <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ksR-yD-xJV">
+                    <rect key="frame" x="330" y="41" width="53" height="21"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="+10,13" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AKT-es-Au5">
+                            <rect key="frame" x="5" y="5" width="45" height="12"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="14"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="53" id="JMB-jj-kZe"/>
+                        <constraint firstAttribute="height" constant="21" id="m5z-UV-f2o"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="biq-6f-DWI">
+                    <rect key="frame" x="334.66666666666669" y="15" width="48.333333333333314" height="21"/>
+                    <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="18"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="ANi-SF-p4J" secondAttribute="bottom" constant="11" id="4Ho-jA-w2C"/>
+                <constraint firstItem="ksR-yD-xJV" firstAttribute="top" secondItem="biq-6f-DWI" secondAttribute="bottom" constant="5" id="8kJ-r7-6Ad"/>
+                <constraint firstItem="tWv-RQ-pAZ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="15" id="KhG-lt-taR"/>
+                <constraint firstAttribute="trailing" secondItem="ksR-yD-xJV" secondAttribute="trailing" constant="10" id="LQv-Kd-TtM"/>
+                <constraint firstItem="ksR-yD-xJV" firstAttribute="leading" secondItem="ANi-SF-p4J" secondAttribute="trailing" constant="149.33000000000001" id="NDy-Fl-FwP"/>
+                <constraint firstItem="ANi-SF-p4J" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="PhL-XX-BKf"/>
+                <constraint firstItem="ANi-SF-p4J" firstAttribute="top" secondItem="tWv-RQ-pAZ" secondAttribute="bottom" constant="10" id="VRa-0g-9Ff"/>
+                <constraint firstAttribute="trailing" secondItem="biq-6f-DWI" secondAttribute="trailing" constant="10" id="dZ8-Jh-y21"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="ksR-yD-xJV" secondAttribute="bottom" constant="13" id="eMa-su-LeC"/>
+                <constraint firstItem="biq-6f-DWI" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="15" id="kh3-e5-wtx"/>
+                <constraint firstItem="tWv-RQ-pAZ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="uQI-1q-MNb"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="percentLabel" destination="AKT-es-Au5" id="5aM-t0-BEf"/>
+                <outlet property="percentView" destination="AKT-es-Au5" id="WRu-Ot-7It"/>
+                <outlet property="stockName" destination="tWv-RQ-pAZ" id="0Ku-n5-Jka"/>
+                <outlet property="stockPrice" destination="biq-6f-DWI" id="yv5-Dj-mSs"/>
+            </connections>
+            <point key="canvasLocation" x="116.79389312977099" y="19.366197183098592"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
