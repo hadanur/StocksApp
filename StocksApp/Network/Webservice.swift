@@ -16,6 +16,7 @@ class Webservice {
     
     func downloadStocks(completion : @escaping ([Stock]?) -> ()) {
         let url = URL(string: "https://raw.githubusercontent.com/atilsamancioglu/K21-JSONDataSet/master/crypto.json")
+
         URLSession.shared.dataTask(with: url!) { data, response, error in
             if let error = error {
                 print(error.localizedDescription)
@@ -24,10 +25,7 @@ class Webservice {
                 do {
                     let stockList = try JSONDecoder().decode([Stock].self, from: data)
                     completion(stockList)
-                } catch {
-                    print(error.localizedDescription)
-                    print(String(describing: error))
-                }
+                } catch { }
             }
         }.resume()
     }

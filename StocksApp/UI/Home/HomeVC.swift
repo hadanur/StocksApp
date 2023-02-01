@@ -8,12 +8,12 @@
 import UIKit
 
 class HomeVC: UIViewController {
-
+    
     @IBOutlet private weak var tableView: UITableView!
-    var viewModel: HomeVM!
     @IBOutlet private weak var searchBar: UISearchBar!
     @IBOutlet private weak var popButton: UIButton!
     @IBOutlet private weak var infoButton: UIButton!
+    private var viewModel: HomeVM!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,35 +25,45 @@ class HomeVC: UIViewController {
         tableView.dataSource = self
         viewModel.delegate = self
         searchBar.delegate = self
+        
         viewModel.fetchStocks()
         setMySymbolsButton()
         setInfoButton()
     }
-
+    
     private func setMySymbolsButton(){
         let optionClosure = {(action: UIAction) in
-                    print(action.title)
-                }
-               
-                popButton.menu = UIMenu(children: [
-                    UIAction(title: "My Symbols", state: .off, handler: optionClosure),
-                    UIAction(title: "All Symbols", state: .off , handler: optionClosure),
-                ])
-               popButton.showsMenuAsPrimaryAction = true
-               popButton.changesSelectionAsPrimaryAction = true
+            print(action.title)
+        }
+        
+        popButton.menu = UIMenu(children: [
+            UIAction(title: "My Symbols",
+                     state: .off,
+                     handler: optionClosure),
+            UIAction(title: "All Symbols",
+                     state: .off ,
+                     handler: optionClosure),
+        ])
+
+        popButton.showsMenuAsPrimaryAction = true
+        popButton.changesSelectionAsPrimaryAction = true
     }
     
     private func setInfoButton(){
         let optionClosure = {(action: UIAction) in
-                    print(action.title)
-                }
-               
-                infoButton.menu = UIMenu(children: [
-                    UIAction(title: "Edit WatchList", state: .off, handler: optionClosure),
-                    UIAction(title: "Show Currency", state: .off , handler: optionClosure),
-                ])
-               infoButton.showsMenuAsPrimaryAction = true
-               infoButton.changesSelectionAsPrimaryAction = true
+            print(action.title)
+        }
+        
+        infoButton.menu = UIMenu(children: [
+            UIAction(title: "Edit WatchList",
+                     state: .off,
+                     handler: optionClosure),
+            UIAction(title: "Show Currency",
+                     state: .off ,
+                     handler: optionClosure),
+        ])
+        infoButton.showsMenuAsPrimaryAction = true
+        infoButton.changesSelectionAsPrimaryAction = true
     }
 }
 
@@ -68,24 +78,7 @@ extension HomeVC {
 
 extension HomeVC: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        
-        viewModel.filteredStocks = []
-        
-        if searchText == ""
-        {
-            viewModel.filteredStocks = viewModel.stocks
-        } else {
-            
-            //viewModel.filteredStocks = viewModel.stocks.filter { $0.currency.lowercased().contains(searchText.lowercased() )}
-            
-            for word in viewModel.stocks {
-                if word.currency.lowercased().contains(searchText.lowercased())
-                {
-                    viewModel.filteredStocks.append(word)
-                }
-            }
-        }
-        self.tableView.reloadData()
+        viewModel.filterStock(with: searchText.lowercased())
     }
 }
 
@@ -109,5 +102,9 @@ extension HomeVC: HomeVMDelegate {
     
     func fetchDataError() {
         self.showAlert(title: "Error", message: "Try Again")
+    }
+
+    func reloadTableView() {
+        tableView.reloadData()
     }
 }
